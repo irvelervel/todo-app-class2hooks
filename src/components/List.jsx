@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { toggleCompleted, reset } from "../store/actions";
+import { toggleCompleted, reset } from "../actions";
 import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 
+const mapStateToProps = (state) => state;
+
 const mapDispatchToProps = (dispatch) => ({
   toggleCompleted: (id) => dispatch(toggleCompleted(id)),
-  reset: () => dispatch(reset())
+  reset: () => dispatch(reset()),
 });
 
 class List extends Component {
@@ -29,4 +31,4 @@ class List extends Component {
   }
 }
 
-export default connect((s) => s, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);

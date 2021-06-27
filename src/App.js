@@ -1,15 +1,11 @@
-import InputForm from './components/InputForm'
-import List from './components/List'
-import store from './store'
-import { Provider } from 'react-redux'
+import InputForm from "./components/InputForm";
+import List from "./components/List";
 
-export default function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <InputForm />
-        <List />
-      </div>
-    </Provider>
-  );
-}
+const App = () => (
+  <div className="App">
+    <InputForm />
+    <List />
+  </div>
+);
+
+export default App;
